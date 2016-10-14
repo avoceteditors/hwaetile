@@ -7,16 +7,12 @@ HWAET = ~/Public/hwaetile
 
 all: i3wmlink
 
-i3wmlink:
+i3wm-init:
 	$(CALLCFG)/i3 i3
 
+awesome-init:
+	$(CALLCFG)/awesome awesome
 
-xmonadconfig: xmonadrc xmonbar-top
+xmonad-init:
+	$(CALLHM).xmonad xmonad
 
-xmonadrc:
-	ln -s $(HWAET)/xmonad/xmonad.hs ~/.xmonad/xmonad.hs
-
-xmobar-top:
-	ln -s $(HWAET)/xmonad/top-xmobar.hs ~/.top-xmobarrc
-xmobar-bot:
-	ln -s $(HWAET)/xmonad/bot-xmobar.hs ~/.bot-xmobarrc

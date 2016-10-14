@@ -11,13 +11,14 @@ import XMonad.Config.Xfce
 import XMonad.Util.EZConfig
 
 -- Terminal Configuration
-myTerm = "~/.local/bin/xterm.sh"
+myTerm = "mate-terminal"
+--myTerm = "~/.local/bin/xterm.sh"
 
 --------------------------------------------------
 -- Keys
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
    [ ((modMask, xK_b), sendMessage ToggleStruts)
-   , ((modMask .|. shiftMask, xK_q), spawn "xfce4-session-logout")
+   , ((modMask .|. shiftMask, xK_q), io (exitWith ExitSuccess))
    ]
 
 -- Modkey
